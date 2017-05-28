@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import spaceshipgame.model.PlayerManager;
+import spaceshipgame.model.dao.HibernateDAO;
 
 
 
@@ -197,6 +198,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		HibernateDAO.close();
 
 	}
 

@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import spaceshipgame.view.Main;
@@ -42,7 +43,7 @@ public class PlayerValidation {
 	/**
 	 *Jelszó helyességét vizsgáló metódus.
 	 */
-	public void passwordValidation(TextField passwordField,TextField cPasswordField,Label passwordError,Label passwordCError){
+	public void passwordValidation(PasswordField passwordField,PasswordField cPasswordField,Label passwordError,Label passwordCError){
 		passwordError.setTextFill(Color.RED);
 		passwordCError.setTextFill(Color.RED);
 		if (passwordField.getText().equals(cPasswordField.getText())) {

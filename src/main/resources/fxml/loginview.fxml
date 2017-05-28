@@ -32,10 +32,11 @@
                               <Insets />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="passwordfield" prefHeight="19.0" prefWidth="170.0">
+                        <PasswordField fx:id="passwordfield">
                            <HBox.margin>
                               <Insets left="50.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                        </PasswordField>
                      </children>
                   </HBox>
                   <HBox prefHeight="50.0" prefWidth="318.0">

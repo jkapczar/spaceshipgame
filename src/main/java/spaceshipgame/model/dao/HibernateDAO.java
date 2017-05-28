@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 /**
  *Adatbázissal való kapcsolatteremtés.
  */
-public class HibernateDAO implements AutoCloseable{
+public class HibernateDAO{
 	
 	private static EntityManager em = null;
 	private static EntityManagerFactory emf = null;
@@ -40,8 +40,8 @@ public class HibernateDAO implements AutoCloseable{
 	/**
 	 *Adatbázis kapcsolat lezárása.
 	 */
-	@Override
-	public void close(){
+	
+	public static void close(){
 		
 			em.close();
 			emf.close();

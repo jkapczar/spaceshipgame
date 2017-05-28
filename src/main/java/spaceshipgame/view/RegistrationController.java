@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import spaceshipgame.model.Player;
 import spaceshipgame.model.PlayerValidation;
@@ -18,11 +19,11 @@ public class RegistrationController {
 	@FXML
 	private Label usernameError;
 	@FXML
-	private TextField passwordField;
+	private PasswordField passwordField;
 	@FXML
 	private Label passwordError;
 	@FXML
-	private TextField cPasswordField;
+	private PasswordField cPasswordField;
 	@FXML
 	private Label passwordCError;
 	@FXML

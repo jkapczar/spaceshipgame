@@ -36,7 +36,7 @@
                               <Insets right="70.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="passwordField" />
+                        <PasswordField fx:id="passwordField" />
                         <Label fx:id="passwordError" prefHeight="30.0" prefWidth="165.0">
                            <HBox.margin>
                               <Insets left="30.0" />
@@ -50,7 +50,7 @@
                               <Insets right="20.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="cPasswordField" />
+                        <PasswordField fx:id="cPasswordField" />
                         <Label fx:id="passwordCError" prefHeight="30.0" prefWidth="165.0">
                            <HBox.margin>
                               <Insets left="30.0" />
