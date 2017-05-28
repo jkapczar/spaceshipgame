@@ -15,6 +15,7 @@ import spaceshipgame.model.PlayerManager;
 
 public class Main extends Application {
 	
+	
 	public static Stage primaryStage;
 	public static Stage secondaryStage;
 	public static PlayerManager PM = new PlayerManager();

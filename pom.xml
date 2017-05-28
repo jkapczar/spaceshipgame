@@ -38,6 +38,8 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		
+		
 	<dependency>
   		<groupId>org.slf4j</groupId>
   		<artifactId>slf4j-api</artifactId>
@@ -99,7 +101,21 @@
 			<artifactId>hibernate-annotations</artifactId>
 			<version>3.5.6-Final</version>
 		</dependency>
+		 
+    <dependency>
+        <groupId>com.oracle</groupId>
+        <artifactId>ojdbc6</artifactId>
+        <version>11.2.0.3</version>
+    </dependency>
+
 	</dependencies>
+<repositories>
+    <!-- Repository for ORACLE ojdbc6. -->
+    <repository>
+        <id>codelds</id>
+        <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+    </repository>
+</repositories>
 	<build>
 		<plugins>
 			<plugin>
@@ -182,6 +198,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -207,6 +224,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
 	<reporting>
 		<plugins>
 			<plugin>
