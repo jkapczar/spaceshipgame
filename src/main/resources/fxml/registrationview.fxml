@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spaceshipgame.view.RegistrationController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="555.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="235.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+                           <HBox.margin>
+                              <Insets right="70.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="usernameField" alignment="TOP_LEFT">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></TextField>
+                        <Label fx:id="usernameError" prefHeight="30.0" prefWidth="165.0">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="235.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+                           <HBox.margin>
+                              <Insets right="70.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="passwordField" />
+                        <Label fx:id="passwordError" prefHeight="30.0" prefWidth="165.0">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="235.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="cPasswordField" />
+                        <Label fx:id="passwordCError" prefHeight="30.0" prefWidth="165.0">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="235.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
+                           <HBox.margin>
+                              <Insets right="65.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="firstNameField" />
+                        <Label fx:id="fNameError" prefHeight="30.0" prefWidth="165.0">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="235.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
+                           <HBox.margin>
+                              <Insets right="65.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="lastNameField">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                        <Label fx:id="lNameError" prefHeight="30.0" prefWidth="165.0">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="300.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date:">
+                           <HBox.margin>
+                              <Insets right="100.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="dateField" />
+                        <Label fx:id="dateError" prefHeight="30.0" prefWidth="163.0" textOverrun="WORD_ELLIPSIS">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="11.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="235.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+                           <HBox.margin>
+                              <Insets right="95.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="emailField">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                        <Label fx:id="emailError" prefHeight="30.0" prefWidth="165.0">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="registrationButton" mnemonicParsing="false" onAction="#regBtnOnClick" text="Registration" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></HBox>
+   </children>
+</AnchorPane>

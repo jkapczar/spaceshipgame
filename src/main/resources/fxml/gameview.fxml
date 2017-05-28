@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spaceshipgame.view.GameController">
+   <children>
+      <Label fx:id="time" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="25.0" prefWidth="146.0" text="time">
+         <padding>
+            <Insets right="50.0" />
+         </padding></Label>
+      <Label fx:id="score" alignment="CENTER" contentDisplay="BOTTOM" layoutX="422.0" layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="17.0" prefWidth="178.0" text="score" />
+      <Label fx:id="stage" alignment="CENTER" contentDisplay="RIGHT" layoutX="256.0" layoutY="2.0" prefHeight="10.0" prefWidth="88.0" text="stage" />
+      <Label fx:id="lifes" alignment="TOP_LEFT" layoutY="378.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="15.0" prefWidth="126.0" text="lifes" />
+   </children>
+</Pane>
