@@ -53,12 +53,13 @@ public class RegistrationController {
 	@FXML
 	public void regBtnOnClick(){
 		validation();
-		setPlayer();
+		
 		if (player != null) {
 			try {
 				Main.PM.savePlayer(player);
 				main.createLoginView(Main.primaryStage);
 			} catch (Exception e) {
+				System.out.println("hiba");
 				e.printStackTrace();
 			}
 			
@@ -67,12 +68,18 @@ public class RegistrationController {
 	}
 	
 	public void validation(){
-		pv.valid(usernameField,"([a-zA-Z])+([0-9])*",usernameError,"invalid",3,8);
-		pv.passwordValidation(passwordField,cPasswordField,passwordError,passwordCError);
-		pv.valid(firstNameField,"([a-zA-Z])+",fNameError,"invalid",3,50);
-		pv.valid(lastNameField,"([a-zA-Z])+",lNameError,"invalid",3,50);
-		pv.dateValidation(dateField, "\\d{4}-[01]\\d-[0-3]\\d", dateError);
-		pv.valid(emailField,"^[(a-zA-Z-0-9-\\_\\.)]+@[(a-z-A-z)]+\\.[(a-zA-z)]{2,3}$",emailError,"invalid",1,50);
+		if (pv.userNameValidation(usernameField,usernameError)) {
+			pv.valid(usernameField,"([a-zA-Z])+([0-9])*",usernameError,"invalid",3,8);
+			pv.passwordValidation(passwordField,cPasswordField,passwordError,passwordCError);
+			pv.valid(firstNameField,"([a-zA-Z])+",fNameError,"invalid",3,50);
+			pv.valid(lastNameField,"([a-zA-Z])+",lNameError,"invalid",3,50);
+			pv.dateValidation(dateField, "\\d{4}-[01]\\d-[0-3]\\d", dateError);
+			pv.valid(emailField,"^[(a-zA-Z-0-9-\\_\\.)]+@[(a-z-A-z)]+\\.[(a-zA-z)]{2,3}$",emailError,"invalid",1,50);
+			if (validPlayer()) {
+				setPlayer();
+			}
+			
+		}
 	}
 
 	
@@ -83,7 +90,7 @@ public class RegistrationController {
 	}
 	
 	public void setPlayer(){
-		if (validPlayer()) {
+		
 			player = new Player();
 			player.setUserName(usernameField.getText());
 			player.setPassword(Main.PM.getPasswordEncryptor().encryptPassword(passwordField.getText()));
@@ -97,7 +104,6 @@ public class RegistrationController {
 			player.setEmail(emailField.getText());
 		}
 		
-	}
 	
 	
 	public void setMain(Main main){

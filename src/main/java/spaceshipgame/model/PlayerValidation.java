@@ -92,6 +92,26 @@ public class PlayerValidation {
 			logger.info("valid textfield");
 		}
 	}
+	
+	/**
+	 *Játékos felhasználónevének ellenörzése.
+	 *@param textField Felhasználónév.
+	 *@param usernameError Error mező.
+	 *@return Igaz ha még nincs ilyen felhasználónév a rendszerben, hamis egyébként. 
+	 */
+	public boolean userNameValidation(TextField textField,Label usernameError){
+		usernameError.setTextFill(Color.RED);
+		try {
+			Player p =  Main.PM.getPlayerFromDB(textField.getText());
+		} catch (Exception e) {
+			logger.info("username is free");
+			return true;
+		}
+		logger.info("username already taken");
+		usernameError.setText("already taken");
+		return false;
+	}
+	
 	/**
 	 *Bejelentkezést vizsgáló metódus.
 	 *Lekérdezésre kerül a játékos az adatbázisból<br>
