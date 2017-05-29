@@ -18,8 +18,16 @@ public class MenuController {
 	private Button scoreboard;
 	
 	@FXML
+	private Button logoutbtn;
+	
+	@FXML
 	public void scoreboardOnClick(){
 		main.createScoreBoardView();
+	}
+	@FXML
+	public void logoutOnClick(){
+		Main.PM.setLoggedInPlayer(null);
+		main.createLoginView(Main.primaryStage);
 	}
 	
 	@FXML

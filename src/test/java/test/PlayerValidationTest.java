@@ -237,6 +237,40 @@ public class PlayerValidationTest extends ApplicationTest{
 		sleep(500);
 	}
 	
+	@Test
+	public void userNameTest1(){
+		textField.setText("test3");
+		errorField.setText("");
+		Platform.runLater(new Runnable(){
+
+			@Override
+			public void run() {
+						
+				assertEquals(false,pv.userNameValidation(textField,errorField));
+			}
+			   
+			});
+		sleep(500);
+
+	}
+	
+	@Test
+	public void userNameTest2(){
+		textField.setText("nottaken");
+		errorField.setText("");
+		Platform.runLater(new Runnable(){
+
+			@Override
+			public void run() {
+						
+				assertEquals(true,pv.userNameValidation(textField,errorField));
+			}
+			   
+			});
+		sleep(500);
+
+	}
+	
 	 @After
 	 public void tearDown() throws TimeoutException {
 	        /* Close the window. It will be re-opened at the next test. */

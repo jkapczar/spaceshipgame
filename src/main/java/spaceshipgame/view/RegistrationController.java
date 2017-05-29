@@ -44,6 +44,8 @@ public class RegistrationController {
 	private Label emailError;
 	@FXML
 	private Button registrationButton;
+	@FXML
+	private Button backbtn;
 	
 	
 	private SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -59,12 +61,15 @@ public class RegistrationController {
 				Main.PM.savePlayer(player);
 				main.createLoginView(Main.primaryStage);
 			} catch (Exception e) {
-				System.out.println("hiba");
 				e.printStackTrace();
 			}
 			
 			
 		}
+	}
+	@FXML
+	public void backOnClick(){
+		main.createLoginView(Main.primaryStage);
 	}
 	
 	public void validation(){

@@ -3,11 +3,13 @@ package spaceshipgame.model.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import org.jasypt.util.password.BasicPasswordEncryptor;
 /**
  *Adatbázissal való kapcsolatteremtés.
  */
 public class HibernateDAO{
-	
+	private static BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 	private static EntityManager em = null;
 	private static EntityManagerFactory emf = null;
 	private static HibernateDAO instance = null;

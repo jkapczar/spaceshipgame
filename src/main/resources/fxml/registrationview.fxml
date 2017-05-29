@@ -124,9 +124,14 @@
                            </HBox.margin></Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="555.0">
                      <children>
                         <Button fx:id="registrationButton" mnemonicParsing="false" onAction="#regBtnOnClick" text="Registration" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="555.0">
+                     <children>
+                        <Button fx:id="backbtn" mnemonicParsing="false" onAction="#backOnClick" text="Back" />
                      </children>
                   </HBox>
                </children>
