@@ -78,7 +78,7 @@ public class PlayerValidation {
 	/**
 	 *Bejelentkezést vizsgáló metódus.
 	 */
-	public boolean loginValidation(TextField userName, TextField pwField ,Label errorField){
+	public boolean loginValidation(TextField userName, PasswordField pwField ,Label errorField){
 		errorField.setTextFill(Color.RED);
 		if (!userName.getText().equals("") || !pwField.getText().equals("")) {
 			try {
@@ -98,6 +98,6 @@ public class PlayerValidation {
 		
 		}
 		return false;
-	}	
+	}
 
 }

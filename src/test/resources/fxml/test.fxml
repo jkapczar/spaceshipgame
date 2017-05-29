@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.PlayerValidationTest">
+   <children>
+      <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="246.0" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="14.0" layoutY="64.0" prefHeight="49.0" prefWidth="246.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <PasswordField fx:id="passwordField" layoutX="26.0" layoutY="146.0" />
+      <PasswordField fx:id="cPasswordField" layoutX="26.0" layoutY="187.0" />
+      <Label fx:id="passwordError" layoutX="26.0" layoutY="239.0" prefHeight="27.0" prefWidth="167.0" />
+      <Label fx:id="passwordCError" layoutX="26.0" layoutY="278.0" prefHeight="39.0" prefWidth="157.0" />
+   </children>
+</AnchorPane>

@@ -28,7 +28,6 @@ public class ScoreBoardController {
 	
 	public void getData(){
 		for (Player p : Main.PM.getPlayersFromDB()) {
-			System.out.println(p.getUserName());
 			data.add(p);
 		}
 	}
@@ -83,13 +82,7 @@ public class ScoreBoardController {
 
 			
         });
-		
-		//username.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getUserName()));
-		//gametime.setCellValueFactory(p -> new ReadOnlyStringWrapper(p.getValue().getGameTime()));
-		//stage.setCellValueFactory(p -> new ReadOnlyStringWrapper(String.valueOf(p.getValue().getHighestStage())));
-		//score.setCellValueFactory(p -> new ReadOnlyStringWrapper(String.valueOf(p.getValue().getHighestScore())));
-		
-		
+	
 		table.setItems(data);	
 	}
 	
