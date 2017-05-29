@@ -17,7 +17,7 @@ open the template in the editor.
          <property name="hibernate.connection.url" value="jdbc:oracle:thin:@db.inf.unideb.hu:1521:ora11g"/>
          <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
          <property name="hibernate.connection.username" value="H_JFEG40" />
-         <property name="hibernate.connection.password" value="asda" />
+         
       </properties>
    </persistence-unit>
 </persistence>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spaceshipgame.view.DbAccessController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="206.0" prefWidth="600.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password for unidebdb">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </Text>
+                  <PasswordField fx:id="pwfield">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin></PasswordField>
+                  <Label fx:id="errorlabel" prefHeight="29.0" prefWidth="176.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="106.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="confirmbtn" mnemonicParsing="false" onAction="#confirmOnClick" text="Confirm">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="exitbtn" mnemonicParsing="false" onAction="#exitOnClick" text="Exit" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

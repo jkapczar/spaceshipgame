@@ -20,12 +20,9 @@ public class PlayerManager {
 	private Player player;
 	private List<Player> players;
 	/**
-	 *Adatbázis kapcsolat létrehozása.
+	 *Konstruktor.
 	 */
-	public PlayerManager(){
-		pd = HibernateDAO.getInstance().createDAO();
-		logger.info("Hibernate Instance created");
-	}
+	public PlayerManager(){}
 	/**
 	 *Játékos feltöltése adatbázisba.
 	 *@param p Adott játékos.
@@ -41,6 +38,13 @@ public class PlayerManager {
 	public void setLoggedInPlayer(Player p){
 		player = p;
 		logger.info("logged in player set");
+	}
+	/**
+	 *Adatbázis kapcsolat létrehozása.
+	 *@param pw Adatbázishoz szükséges jelszó.
+	 */
+	public void createConnection(String pw){
+		pd = HibernateDAO.getInstance(pw).createDAO();
 	}
 	/**
 	 *Bejelentkezett játékos lekérése.

@@ -1,15 +1,15 @@
 package spaceshipgame.model.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-import org.jasypt.util.password.BasicPasswordEncryptor;
 /**
  *Adatbázissal való kapcsolatteremtés.
  */
 public class HibernateDAO{
-	private static BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 	private static EntityManager em = null;
 	private static EntityManagerFactory emf = null;
 	private static HibernateDAO instance = null;
@@ -18,15 +18,18 @@ public class HibernateDAO{
 	
 	/**
 	 *Globális hozzáférési pontot biztosít az adatbázishoz.
+	 *@param pw Adatbázishoz szükséges jelszó.
 	 *@return HibernateDAO objektum.
 	 */
-	public static HibernateDAO getInstance(){
+	public static HibernateDAO getInstance(String pw){
 		
 		if (instance == null) {
 			instance = new HibernateDAO();
 		}
 		if (emf == null) {
-			emf = Persistence.createEntityManagerFactory("unidebdb");
+			Map<String, Object> tmp = new HashMap<>();
+			tmp.put("hibernate.connection.password", pw);
+			emf = Persistence.createEntityManagerFactory("unidebdb",tmp);
 		}
 		if (em == null) {
 			em = emf.createEntityManager();
@@ -35,7 +38,7 @@ public class HibernateDAO{
 	}
 	/**
 	 *DAO létrehozása.
-	 *@return DAO implementázió.
+	 *@return DAO implementáció.
 	 */
 	public PlayerDAO createDAO(){
 		return new PlayerDAOImpl(em);
