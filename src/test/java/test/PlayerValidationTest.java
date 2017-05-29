@@ -69,7 +69,7 @@ public class PlayerValidationTest extends ApplicationTest{
 	
 	
 	@Test
-	public void dateValidation(){
+	public void dateValidation1(){
 		textField.setText("1111-11-11");
 		errorField.setText("");
 		String pattern = "\\d{4}-[01]\\d-[0-3]\\d";
@@ -82,11 +82,15 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(100);
+		sleep(300);
 		assertEquals("",errorField.getText());
 		
-
+	}
+	@Test
+	public void dateValidation2(){
 		textField.setText("1111-aa-11");
+		errorField.setText("");
+		String pattern = "\\d{4}-[01]\\d-[0-3]\\d";
 		Platform.runLater(new Runnable(){
 
 			@Override
@@ -95,26 +99,29 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(100);
+		sleep(300);
 		assertEquals("invalid date",errorField.getText());
-		
-		textField.setText("1111-13-11");
-		Platform.runLater(new Runnable(){
-
-			@Override
-			public void run() {
-				pv.dateValidation(textField, pattern, errorField);				
-			}
-			   
-			});
-		sleep(100);
-		assertEquals("invalid format. try yyyy-MM-dd",errorField.getText());
-		
-	
 	}
 	
 	@Test
-	public void pwtest(){
+	public void dateValidation3(){
+		textField.setText("1111-13-11");
+		errorField.setText("");
+		String pattern = "\\d{4}-[01]\\d-[0-3]\\d";
+		Platform.runLater(new Runnable(){
+
+			@Override
+			public void run() {
+				pv.dateValidation(textField, pattern, errorField);				
+			}
+			   
+			});
+		sleep(300);
+		assertEquals("invalid format. try yyyy-MM-dd",errorField.getText());
+	}
+	
+	@Test
+	public void pwtest1(){
 		
 		passwordField.setText("pw1");
 		cPasswordField.setText("pw2");
@@ -129,12 +136,18 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(100);
+		sleep(300);
 		assertEquals("password and cpassword",passwordError.getText());
 		assertEquals("not match",passwordCError.getText());
 		
+	}
+	
+	@Test
+	public void pwtest2(){
 		passwordField.setText("pw1");
 		cPasswordField.setText("pw1");
+		passwordError.setText("");
+		passwordCError.setText("");
 		Platform.runLater(new Runnable(){
 
 			@Override
@@ -143,13 +156,17 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(100);
+		sleep(300);
 		assertEquals("invalid",passwordError.getText());
 		assertEquals("invalid",passwordCError.getText());
-		
-		
+	}
+	
+	@Test
+	public void pwtest3(){
 		passwordField.setText("pwtest01");
 		cPasswordField.setText("pwtest01");
+		passwordError.setText("");
+		passwordCError.setText("");
 		Platform.runLater(new Runnable(){
 
 			@Override
@@ -158,10 +175,9 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(100);
+		sleep(300);
 		assertEquals("",passwordError.getText());
 		assertEquals("",passwordCError.getText());
-		
 	}
 
 	@Test
@@ -179,7 +195,7 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(300);
+		sleep(500);
 	
 		
 		
@@ -200,7 +216,7 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(300);
+		sleep(500);
 	}
 	
 	@Test
@@ -218,7 +234,7 @@ public class PlayerValidationTest extends ApplicationTest{
 			}
 			   
 			});
-		sleep(300);
+		sleep(500);
 	}
 	
 	 @After

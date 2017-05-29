@@ -46,7 +46,7 @@ public class Game {
 	public double shipy;
 
 	/**
-	 *Belső osztály a spaceship krajzolásához, forgatásához. 
+	 *Belső osztály a spaceship kirajzolásához, forgatásához. 
 	 * 
 	 */
 	public class Ship extends ImageView{
@@ -57,7 +57,7 @@ public class Game {
 		public double angle;
 		
 		/**
-		 *Ship kezdőértékeit beállító megtódus.
+		 *Ship kezdőértékeit beállító metódus.
 		 */
 		public void setShip(){
 			logger.info("setting ship");
@@ -67,9 +67,8 @@ public class Game {
 			ship.shipc.setRadius(ship.getFitWidth()/2);
 		}
 		/**
-		 *
 		 *A ship forgatásához szükséges szöget számoló függvény.
-		 *
+		 *@return Az egér és ship által bezárt szög.
 		 */
 		public double rotate(){
 			
@@ -96,7 +95,7 @@ public class Game {
 		
 		/**
 		 *A ship tüzelését megvalósító metódus. 
-		 *
+		 *A {@link makebullet()} metódust hívja kattintáskor.
 		 */
 		public void fire(){
 			root.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -119,7 +118,11 @@ public class Game {
 		
 	}
 	/**
-	 *Töltények mozgatázát végzó metódus.
+	 *Töltények mozgatását végző metódus.<br>
+	 *Az új pozíció kiszámítása után leteszteli hogy nem e hagyta el az ablakot az adott<br>
+	 *töltény. Ezt a {@link removetestbullet(MovingCircle)} metódus végzi.<br>
+	 *Ha lenne olyan töltény ami elhagyta az ablakot az törlésre kerül.<br>
+	 *Ezt a {@link removebullet()} végzi.<br>
 	 */
 	public void movebullet(){
 	
@@ -145,7 +148,11 @@ public class Game {
 		removelistb.clear();
 	}
 	/**
-	 *Megállapítja, hogy törlésre kerüljön e az adott töltény.
+	 *Megállapítja, hogy törlésre kerüljön e az adott töltény.<br>
+	 *Vizsgálja hogy az adott töltény elhagyta e már az ablakot.<br>
+	 *Ha igen törli.
+	 *@param b Töltény objektum.
+	 *@return Igaz ha elhagyta az ablakot, ellenkező esetben hamis.
 	 */
 	public boolean removetestbullet(MovingCircle b){
 		if (b.getLayoutX() > window.getX() || b.getLayoutX() < 0) {
@@ -157,7 +164,10 @@ public class Game {
 		return false;
 	} 
 	/**
-	 *Ellenséges kör objektumokat készítő metódus.
+	 *Ellenséges kör objektumokat készítő metódus.<br>
+	 *Az ellenséges objektumok az ablak bármely oldaláról érkezhetnek.<br>
+	 *Egyszerre mindig csak adott számú ellenséges objektum lehet.<br>
+	 *Ez a játékos által elért stage szinttől függ.<br>
 	 */
 	public void makecircle(){
 		
@@ -194,7 +204,11 @@ public class Game {
 		
 	}
 	/**
-	 *Ellenséges objektumok mozgását megvalósító metódus. 
+	 *Ellenséges objektumok mozgását megvalósító metódus. <br>
+	 *Az új pozíció kiszámítása után leteszteli hogy nem e hagyta el az ablakot az adott<br>
+	 *objektum. Ezt a {@link removetestcircle(MovingCircle)} metódus végzi.<br>
+	 *Ha lenne olyan objektum ami elhagyta az ablakot az törlésre kerül.<br>
+	 *Ezt a {@link removecircle()} végzi.<br>
 	 */
 	public void movecircle(){
 		
@@ -218,7 +232,11 @@ public class Game {
 		removelistc.clear();
 	}
 	/**
-	 *Megállapítja, hogy törlésre kerüljön e az adott ellenséges objektum. 
+	 *Megállapítja, hogy törlésre kerüljön e az adott ellenséges objektum.<br>
+	 *Vizsgálja hogy az adott objektum elhagyta e már az ablakot.<br>
+	 *Ha igen törli.
+	 *@param c Ellenséges objektum.
+	 *@return Igaz ha elhagyta az ablakot, ellenkező esetben hamis.
 	 */
 	public boolean removetestcircle(MovingCircle c){
 		if (c.getLayoutX() > window.getX() || c.getLayoutX() < 0) {
@@ -230,7 +248,11 @@ public class Game {
 		return false;
 	}
 	/**
-	 *Két kör objektum ütközésére reagál. 
+	 *Két kör objektum ütközésére reagál.<br>
+	 *Megvizsgáljuk hogy ellenséges objektum ütközött e a hajóval.<br>
+	 *Ha igen őt eltávolítjuk.<br>
+	 *Vizsgálatra kerül az is ha töltény ütközik ellenséges objektummal.<br>
+	 *Ebben az esetben mind a kettő eltávolításra kerül. <br>
 	 */
 	public void collosionResponse(){
 		
@@ -254,13 +276,17 @@ public class Game {
 		
 	}
 	/**
-	 *Vizsgálja,hogy két kör ütközik e. 
+	 *Vizsgálja,hogy két kör ütközik e.
+	 *@param c kör objektum.
+	 *@param b kör objektum.
+	 *@return Igaz ha a két kör ütközésben van, ellenkező esetben hamis.
 	 */
 	public boolean collosionDetection(Circle c, Circle b){
 		return b.getBoundsInParent().intersects(c.getBoundsInParent());
 	}
 	/**
-	 *10 másodpercenként növeli a stage változo értéket ami nehezíti a játékot. 
+	 *10 másodpercenként növeli a stage változo értéket ami nehezíti a játékot.<br>
+	 *A stage a játékos által elért szintet jelenti.
 	 */
 	public void updateGameStages(){
 		player.setStage((int) player.getTime() / 10);
@@ -279,14 +305,25 @@ public class Game {
 			
 		}
 	}
-	
+	/**
+	 *Pane-t beáálító metódus.<br>
+	 *Erre fogunk rajzolni.
+	 *@param game Amire rajzolni fogunk.
+	 */
 	public void setPane(Pane game){
 		this.root = game;
 	}
+	/**
+	 *Main-t beállító metódus.
+	 *@param main Main.
+	 */
 	public void setMain(Main main){
 		this.main = main;
 	}
-	
+	/**
+	 *Játékos beállító metódus.
+	 *@param player Adott játékos.
+	 */
 	public void setPlayer(Player player){
 		this.player = player;
 	}

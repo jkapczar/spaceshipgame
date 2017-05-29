@@ -11,7 +11,7 @@ import spaceshipgame.model.dao.HibernateDAO;
 import spaceshipgame.model.dao.PlayerDAO;
 
 /**
- *Játékos kezelő osztály mely megvalósitja az adatbázissal való műveletek nagy részét. 
+ *Játékos kezelő osztály mely megvalósítja az adatbázissal való műveletek nagy részét. 
  */
 public class PlayerManager {
 	private static Logger logger = LoggerFactory.getLogger(PlayerManager.class);
@@ -24,46 +24,59 @@ public class PlayerManager {
 	 */
 	public PlayerManager(){
 		pd = HibernateDAO.getInstance().createDAO();
+		logger.info("Hibernate Instance created");
 	}
 	/**
 	 *Játékos feltöltése adatbázisba.
+	 *@param p Adott játékos.
 	 */
 	public void savePlayer(Player p){
 		pd.createPlayer(p);
+		logger.info("player saved");
 	}
 	/**
 	 *Bejelentkezett játékos beálítása.
+	 *@param p Adott játékos.
 	 */
 	public void setLoggedInPlayer(Player p){
 		player = p;
+		logger.info("logged in player set");
 	}
 	/**
 	 *Bejelentkezett játékos lekérése.
+	 *@return Bejelentkezett játékos.
 	 */
 	public Player getLoggedInPlayer(){
 		return this.player;
 	}
 	/**
 	 *Egy adott játékos lekérése név alapján.
+	 *@param name Adott játékos neve.
+	 *@return Adott játékos amelynek neve a name paraméterrel egyezik.
 	 */
 	public Player getPlayerFromDB(String name){
+		logger.info("get player from db");
 		return pd.getPlayer(name);
 	}
 	/**
 	 *Összes játékos lekérése.
+	 *@return Összes regisztrált játékos.
 	 */
 	public List<Player> getPlayersFromDB(){
 		players = pd.getPlayers();
+		logger.info("get all player from db");
 		return players;
 	}
 	/**
 	 *Jelszóvisszafejtéshez használt objektum lekérdező metódusa.
+	 *@return Jelszó visszafejtő.
 	 */
 	public BasicPasswordEncryptor getPasswordEncryptor() {
 		return passwordEncryptor;
 	}
 	/**
 	 *Játékos statisztikák frissítését végző metódus.
+	 *@param player Adott játékos.
 	 */
 	public void updatePlayerStats(Player player){
 		if (player.getScore()>player.getHighestScore()) {

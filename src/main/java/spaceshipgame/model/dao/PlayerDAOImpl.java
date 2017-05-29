@@ -14,12 +14,14 @@ public class PlayerDAOImpl implements PlayerDAO{
 	private EntityManager em;
 	/**
 	 *Entitymanager beállítása.
+	 *@param em EntityManager.
 	 */
 	public PlayerDAOImpl(EntityManager em) {
 		this.em = em;
 	}
 	/**
 	 *Játékos mentése adatbázisba.
+	 *@param player Adott játékos.
 	 */
 	@Override
 	public void createPlayer(Player player) {
@@ -30,6 +32,8 @@ public class PlayerDAOImpl implements PlayerDAO{
 	}
 	/**
 	 *Játékos lekérése adatbázisból.
+	 *@param name Játékos neve.
+	 *@return Adott játékos név alapján.
 	 */
 	@Override
 	public Player getPlayer(String name){
@@ -37,6 +41,7 @@ public class PlayerDAOImpl implements PlayerDAO{
 	}
 	/**
 	 *Összes játékos lekérése adatbázisból.
+	 *@return Összes játékos.
 	 */
 	@Override
 	public List<Player> getPlayers() {
@@ -44,6 +49,7 @@ public class PlayerDAOImpl implements PlayerDAO{
 	}
 	/**
 	 *Játékos adatok frissítése az adatbázisban.
+	 *@param p Adott játékos.
 	 */
 	@Override
 	public void updatePlayerTime(Player p) {
@@ -56,6 +62,7 @@ public class PlayerDAOImpl implements PlayerDAO{
 	}
 	/**
 	 *Játékos adatok frissítése az adatbázisban.
+	 *@param p Adott játékos.
 	 */
 	@Override
 	public void updatePlayerScore(Player p) {
@@ -67,6 +74,7 @@ public class PlayerDAOImpl implements PlayerDAO{
 	}
 	/**
 	 *Játékos adatok frissítése az adatbázisban.
+	 *@param p Adott játékos.
 	 */
 	@Override
 	public void updatePlayerStage(Player p) {

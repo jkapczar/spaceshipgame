@@ -62,7 +62,6 @@ public class Player {
 	
 	@Column(name = "HIGHEST_SCORE")
 	private int highestScore;
-	//time
 	
 	//game
 	@Transient
@@ -107,6 +106,7 @@ public class Player {
 	public void stopTimer(){
 		elapsedTime = time;
 	}
+	//CHECKSTYLE:OFF
 	public int getId() {
 		return id;
 	}

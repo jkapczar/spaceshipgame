@@ -1,5 +1,5 @@
 package spaceshipgame.view;
-
+//CHECKSTYLE:OFF
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 

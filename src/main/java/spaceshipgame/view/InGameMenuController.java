@@ -1,5 +1,5 @@
 package spaceshipgame.view;
-
+//CHECKSTYLE:OFF
 
 
 import javafx.fxml.FXML;

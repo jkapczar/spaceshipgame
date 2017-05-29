@@ -1,4 +1,5 @@
 package spaceshipgame.model.dao;
+//CHECKSTYLE:OFF
 
 import java.util.List;
 

@@ -1,5 +1,5 @@
 package spaceshipgame.view;
-
+//CHECKSTYLE:OFF
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;

@@ -15,7 +15,8 @@ public class HibernateDAO{
 	private HibernateDAO(){}
 	
 	/**
-	 *Globális hozzáférési pontot biztosító metódus.
+	 *Globális hozzáférési pontot biztosít az adatbázishoz.
+	 *@return HibernateDAO objektum.
 	 */
 	public static HibernateDAO getInstance(){
 		
@@ -32,6 +33,7 @@ public class HibernateDAO{
 	}
 	/**
 	 *DAO létrehozása.
+	 *@return DAO implementázió.
 	 */
 	public PlayerDAO createDAO(){
 		return new PlayerDAOImpl(em);
@@ -40,13 +42,9 @@ public class HibernateDAO{
 	/**
 	 *Adatbázis kapcsolat lezárása.
 	 */
-	
 	public static void close(){
-		
-			em.close();
-			emf.close();
-			
-		
+		em.close();
+		emf.close();
 	} 
 
 }

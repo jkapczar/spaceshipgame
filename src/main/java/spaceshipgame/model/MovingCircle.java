@@ -15,7 +15,13 @@ public class MovingCircle extends Circle{
 	private Point2D start;
 	private Point2D end;
 	
-
+	/**
+	 *Töltény és ellenséges objektum konstruktora.
+	 *@param x Kör x koordináta.
+	 *@param y Kör y koordináta.
+	 *@param r Kör sugara.
+	 *@param c Kör szine. 
+	 */
 	public MovingCircle(double x, double y,double r,Color c) {
 		this.setRadius(r);
 		this.setFill(c);
@@ -35,6 +41,10 @@ public class MovingCircle extends Circle{
 	
 	/**
 	 *Két pont között meghatároz egy egységnyi irányvektort.
+	 *@param Fx Kezdőpont x koordinátája.
+	 *@param Fy Kezdőpont y koordinátája.
+	 *@param Tx Végpont x koordinátája.
+	 *@param Ty Végpont y koordinátája.
 	 */
 	public void getDirection(double Fx,double Fy,double Tx,double Ty){
 		setStart(new Point2D(Fx, Fy));
@@ -44,7 +54,7 @@ public class MovingCircle extends Circle{
 			
 	}
 	
-	
+	//CHECKSTYLE:OFF
 	public double getSpeed() {
 		return speed;
 	}

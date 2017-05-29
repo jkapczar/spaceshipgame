@@ -1,5 +1,5 @@
 package spaceshipgame.view;
-
+//CHECKSTYLE:OFF
 import java.time.LocalTime;
 
 import javafx.fxml.FXML;

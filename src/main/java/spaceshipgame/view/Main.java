@@ -1,6 +1,9 @@
 package spaceshipgame.view;
-
+//CHECKSTYLE:OFF
 import java.io.IOException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +18,7 @@ import spaceshipgame.model.dao.HibernateDAO;
 
 
 public class Main extends Application {
-	
+	private static Logger logger = LoggerFactory.getLogger(Main.class);
 	
 	public static Stage primaryStage;
 	public static Stage secondaryStage;
@@ -31,6 +34,7 @@ public class Main extends Application {
 	
 	
 	public void createInGameMenu(){
+		logger.info("create ingame menu");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("/fxml/ingamemenu.fxml"));
 		
@@ -50,12 +54,14 @@ public class Main extends Application {
 			
 			
 		} catch (IOException e) {
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		
 		
 	}
 	public void createGameOverView(){
+		logger.info("create game over view");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("/fxml/gameover.fxml"));
 		
@@ -74,12 +80,13 @@ public class Main extends Application {
 			secondaryStage.show();
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 	}
 	
 	public void createScoreBoardView(){
+		logger.info("scoreboard");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("/fxml/scoreboardview.fxml"));
 		try {
@@ -98,12 +105,13 @@ public class Main extends Application {
 			secondaryStage.show();
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 	}
 	
 	public void createGameView(){
+		logger.info("gameview");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/fxml/gameview.fxml"));
 		
@@ -120,7 +128,7 @@ public class Main extends Application {
 			primaryStage.setTitle("GAME");
 			primaryStage.show();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		
@@ -128,6 +136,7 @@ public class Main extends Application {
 	}
 	
 	public void createMenu(Stage stage){
+		logger.info("menu");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/fxml/gamemenu.fxml"));
 		
@@ -141,12 +150,13 @@ public class Main extends Application {
 	        primaryStage.setScene(scene);
 	        primaryStage.show();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 	}
 	
 	public void createLoginView(Stage stage){
+		logger.info("login view");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/fxml/loginview.fxml"));
 		
@@ -162,13 +172,14 @@ public class Main extends Application {
 			
 	        	        
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		
 	}
 	
 	public void createRegistrationView(Stage stage){
+		logger.info("reg view");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/fxml/registrationview.fxml"));
 	
@@ -182,7 +193,7 @@ public class Main extends Application {
 	        primaryStage.setScene(scene);
 	        primaryStage.show();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		
@@ -199,7 +210,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 		HibernateDAO.close();
-
+		logger.info("end");
 	}
 
 }

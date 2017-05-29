@@ -1,6 +1,9 @@
 package spaceshipgame.view;
-
+//CHECKSTYLE:OFF
 import java.time.LocalTime;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -19,6 +22,7 @@ import spaceshipgame.model.Game;
 import spaceshipgame.model.Player;
 
 public class GameController {
+	private static Logger logger = LoggerFactory.getLogger(GameController.class);
 	private Player player;
 	private Main main;
 	private Game game = new Game();
@@ -45,6 +49,7 @@ public class GameController {
 		game.ship.setLayoutX(game.shipx);
 		game.ship.setLayoutY(game.shipy);
 		setTextAlignment();
+		logger.info("window resize");
 		
 	}
 	
@@ -55,7 +60,7 @@ public class GameController {
 		@Override
 		public void handle(KeyEvent event) {
 			if (event.getCode()==KeyCode.ESCAPE) {
-				System.out.println("pause");
+				logger.info("game paused");
 				loop.pause();
 				player.stopTimer();
 				main.createInGameMenu();
@@ -70,6 +75,7 @@ public class GameController {
 	
 
 	public void setgame(){
+		logger.info("set the game up");
 		player.setDefault();
 		
 		game.ship.setShip();
@@ -87,6 +93,7 @@ public class GameController {
         
 	}
 	public void startGame(){
+		logger.info("start game");
 		setgame();
 		
         loop = new Timeline(new KeyFrame(Duration.millis(30), new EventHandler<ActionEvent>() {
