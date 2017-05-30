@@ -88,7 +88,7 @@ public class PlayerValidationTest extends ApplicationTest{
 	}
 	@Test
 	public void dateValidation2(){
-		textField.setText("1111-aa-11");
+		textField.setText("1111-111-11");
 		errorField.setText("");
 		String pattern = "\\d{4}-[01]\\d-[0-3]\\d";
 		Platform.runLater(new Runnable(){
