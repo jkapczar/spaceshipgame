@@ -68,7 +68,6 @@ public class Game {
 		}
 		/**
 		 *A ship forgatásához szükséges szöget számoló függvény.
-		 *@return Az egér és ship által bezárt szög.
 		 */
 		public void rotate(){
 			
