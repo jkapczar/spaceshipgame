@@ -70,7 +70,7 @@ public class Game {
 		 *A ship forgatásához szükséges szöget számoló függvény.
 		 *@return Az egér és ship által bezárt szög.
 		 */
-		public double rotate(){
+		public void rotate(){
 			
 			root.addEventFilter(MouseEvent.MOUSE_MOVED, new EventHandler<MouseEvent>() {
 			    @Override
@@ -89,7 +89,7 @@ public class Game {
 			   }
 			});
 			
-			return angle;
+			
 			
 		}
 		
