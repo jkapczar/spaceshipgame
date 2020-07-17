@@ -30,8 +30,7 @@ public class Main extends Application {
 	private RegistrationController rc;
 	private GameController gc;
 	private ScoreBoardController sbc;
-	private DbAccessController dbac;
-	
+
 	
 	
 	public void createInGameMenu(){
@@ -201,32 +200,11 @@ public class Main extends Application {
         
 	}
 	
-	public void createDbAccessView(Stage stage){
-		logger.info("dbaccess view");
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/fxml/dbaccessview.fxml"));
-		
-		try {
-			AnchorPane loginPane = (AnchorPane) loader.load();
-			dbac = loader.getController();
-			dbac.setMain(this);
-			Scene scene = new Scene(loginPane);
-	        primaryStage = stage;
-	        primaryStage.setTitle("Login");
-	        primaryStage.setScene(scene);
-	        primaryStage.show();
-			
-	        	        
-		} catch (IOException e) {
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
-	}
-	
+
 	
 	@Override
 	public void start(Stage stage) throws IOException {
-		createDbAccessView(stage);
+		createLoginView(stage);
     }
 	
 	public static void main(String[] args) {
