@@ -15,5 +15,5 @@ mvn exec:java
 ```
 
 Example
-____
+-----
 <img width=600px src="https://raw.githubusercontent.com/gignx/spaceshipgame/master/example.png"/>
