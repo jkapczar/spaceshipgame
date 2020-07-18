@@ -18,18 +18,15 @@ public class HibernateDAO{
 	
 	/**
 	 *Globális hozzáférési pontot biztosít az adatbázishoz.
-	 *@param pw Adatbázishoz szükséges jelszó.
 	 *@return HibernateDAO objektum.
 	 */
-	public static HibernateDAO getInstance(String pw){
+	public static HibernateDAO getInstance(){
 		
 		if (instance == null) {
 			instance = new HibernateDAO();
 		}
 		if (emf == null) {
-			Map<String, Object> tmp = new HashMap<>();
-			tmp.put("hibernate.connection.password", pw);
-			emf = Persistence.createEntityManagerFactory("unidebdb",tmp);
+			emf = Persistence.createEntityManagerFactory("db");
 		}
 		if (em == null) {
 			em = emf.createEntityManager();

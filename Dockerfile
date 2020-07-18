@@ -1,4 +1,5 @@
-FROM maven:3.5.0-jdk-8
-WORKDIR /apps
-COPY . /apps
-#CMD mvn exec:java
+FROM mysql:latest
+ENV MYSQL_DATABASE="test" \
+    MYSQL_USER="user" \
+    MYSQL_PASSWORD="password" \
+    MYSQL_ROOT_PASSWORD="root"
